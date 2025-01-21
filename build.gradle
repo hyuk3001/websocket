@@ -1,0 +1,78 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.10'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// iamport-rest-client-java 추가
+	implementation 'com.github.iamport:iamport-rest-client-java:0.2.23'
+
+	// logger 사용을 위해 추가
+	implementation 'ch.qos.logback:logback-classic:1.5.6'
+	implementation 'ch.qos.logback:logback-core:1.5.6'
+	implementation 'org.slf4j:slf4j-api:2.1.0-alpha1'
+
+	// 에러 발생시 재시도를 위해 추가
+	implementation("org.springframework.retry:spring-retry")
+
+	// swagger를 통한 API 문서화
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot Test 관련 의존성 (JUnit 5 사용)
+	implementation 'org.springframework.boot:spring-boot-starter-test' // Spring Boot Test (JUnit 5 포함)
+	implementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+	testCompileOnly 'junit:junit:4.13'
+	testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// 다수의 요청을 보내 테스트 하기 위함
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
