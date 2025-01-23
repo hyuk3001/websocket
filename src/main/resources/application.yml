@@ -3,7 +3,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/socket?serverTimezone=Asia/Seoul
     username: root
     password: root
-
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
@@ -25,9 +24,10 @@ springdoc:
   paths-to-match:
     - /api/**  # swagger-ui? ??? api? ????? ??
 
-logging:
-  level:
-    org.springframework.cloud.aws: DEBUG
+jwt:
+  header: Authorization
+  secret: dfklWWHObhUWHEJKHhkjHWKXEHWUIEHXWUIWjhkjHJKWHEJWKeKEhjhKJHEWlhjkjklewkjkljkljewqnnjkbctjkwbtek
+  token-validity-in-seconds: 86400
 
 server:
   address: 0.0.0.0
