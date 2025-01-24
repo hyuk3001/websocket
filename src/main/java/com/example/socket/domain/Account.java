@@ -39,7 +39,7 @@ public class Account {
     @Column(name = "joined_at", updatable = false)
     private LocalDateTime joinedAt = LocalDateTime.now();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "account_authority",
             joinColumns = {@JoinColumn(name = "account_id", referencedColumnName = "account_id")}, // 수정
