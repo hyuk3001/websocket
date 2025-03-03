@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/socket?serverTimezone=Asia/Seoul
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    open-in-view: false
+
+springdoc:
+  swagger-ui:
+    path: /api-test
+    groups-order: DESC
+    tags-sorter: alpha
+    operations-sorter: alpha
+  paths-to-match:
+    - /api/**  # swagger-ui? ??? api? ????? ??
+
+jwt:
+  header: Authorization
+  secret: dfklWWHObhUWHEJKHhkjHWKXEHWUIEHXWUIWjhkjHJKWHEJWKeKEhjhKJHEWlhjkjklewkjkljkljewqnnjkbctjkwbtek
+  token-validity-in-seconds: 86400
+
+server:
+  address: 0.0.0.0
+  port: 8082
+
+  logging:
+    level:
+      org.springframework.security: DEBUG
+      org.springframework.core.env: DEBUG
+      org.springframework.cloud.aws: DEBUG
