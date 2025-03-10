@@ -4,7 +4,7 @@
 - 쇼핑몰 페이지를 구현해보자
 
 ### 2. 기술 스택
-- Java, Spring Boot, MySQL, React, JWT
+- Java, Spring Boot, MongoDB, React, JWT
 
 ### 3. 기능
 - 회원 CRUD
