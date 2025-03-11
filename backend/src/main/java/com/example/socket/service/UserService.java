@@ -3,6 +3,7 @@ package com.example.socket.service;
 import com.example.socket.DTO.AccountDTO;
 import com.example.socket.domain.Account;
 import com.example.socket.domain.Authority;
+import com.example.socket.repository.AuthorityRepository;
 import com.example.socket.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,22 +19,23 @@ public class UserService{
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public Account signup(AccountDTO accountDTO) {
+    public Account save(AccountDTO accountDTO) {
 
         if(userRepository.findOneWithAuthoritiesByEmail(accountDTO.getEmail()).orElse(null) != null) {
             throw new RuntimeException("이미 가입되어 있는 유저 입니다.");
         }
 
-        Authority authority = Authority.builder()
-                .authorityName("USER")
-                .build();
+        String userRole = accountDTO.getRole();
+        if (userRole == null || userRole.isEmpty()) {
+            accountDTO.setRole("USER");
+        }
 
         Account user = Account.builder()
                 .email(accountDTO.getEmail())
                 .name(accountDTO.getName())
                 .password(passwordEncoder.encode(accountDTO.getPassword()))
                 .phone(accountDTO.getPhone())
-                .authorities(Collections.singleton(authority))
+                .role(accountDTO.getRole())
                 .joinedAt(LocalDateTime.now())
                 .build();
 

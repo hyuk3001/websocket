@@ -1,5 +1,6 @@
 package com.example.socket.DTO;
 
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -14,4 +15,6 @@ public class AccountDTO {
     private String name;
     @NotBlank
     private String phone;
+    @Nullable
+    private String role;
 }
