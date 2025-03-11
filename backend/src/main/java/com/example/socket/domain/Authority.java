@@ -1,10 +1,8 @@
 package com.example.socket.domain;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -15,12 +13,18 @@ import lombok.*;
 public class Authority {
 
     @Id
+    @JsonIgnore
+    @Column(name = "authority_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "authority_name", length = 50)
     private String authorityName;
 
-
+    // 1. USER : 일반회원, 2. SELLER : 판매자, 3. ADMIN : 관리자
     @Builder
     public Authority(String authorityName) {
         this.authorityName = authorityName;
     }
+
 }
