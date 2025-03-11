@@ -2,15 +2,12 @@ package com.example.socket.service;
 
 import com.example.socket.DTO.AccountDTO;
 import com.example.socket.domain.Account;
-import com.example.socket.domain.Authority;
-import com.example.socket.repository.AuthorityRepository;
 import com.example.socket.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 
 @Service
 @RequiredArgsConstructor

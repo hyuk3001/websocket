@@ -1,0 +1,106 @@
+Index: .idea/modules/websocket.iml
+===================================================================
+diff --git a/.idea/modules/websocket.iml b/.idea/modules/websocket.iml
+deleted file mode 100644
+--- a/.idea/modules/websocket.iml	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
++++ /dev/null	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.id="mall" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$/../..">
+-      <excludeFolder url="file://$MODULE_DIR$/../../.gradle" />
+-      <excludeFolder url="file://$MODULE_DIR$/../../build" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/modules/backend/websocket.backend.iml
+===================================================================
+diff --git a/.idea/modules/backend/websocket.backend.iml b/.idea/modules/backend/websocket.backend.iml
+deleted file mode 100644
+--- a/.idea/modules/backend/websocket.backend.iml	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
++++ /dev/null	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.id=":backend" external.linked.project.path="$MODULE_DIR$/../../../backend" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.example" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$/../../../backend">
+-      <excludeFolder url="file://$MODULE_DIR$/../../../backend/.gradle" />
+-      <excludeFolder url="file://$MODULE_DIR$/../../../backend/build" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/modules/frontend/websocket.frontend.iml
+===================================================================
+diff --git a/.idea/modules/frontend/websocket.frontend.iml b/.idea/modules/frontend/websocket.frontend.iml
+deleted file mode 100644
+--- a/.idea/modules/frontend/websocket.frontend.iml	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
++++ /dev/null	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.id=":frontend" external.linked.project.path="$MODULE_DIR$/../../../frontend" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="mall" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$/../../../frontend">
+-      <excludeFolder url="file://$MODULE_DIR$/../../../frontend/.gradle" />
+-      <excludeFolder url="file://$MODULE_DIR$/../../../frontend/build" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"78b84ceb-3ba6-443c-86bb-48e295beed89\" name=\"변경\" comment=\"feat: frontend 생성\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"mall\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;hyuk3001&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/hyuk3001/websocket.git&quot;,\r\n    &quot;accountId&quot;: &quot;04ea4f46-0cf1-46ee-bb41-15baeeebac9c&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2sbwCE44KHOhly4Y8dnLofCSG45\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Gradle.websocket 빌드.executor&quot;: &quot;Run&quot;,\r\n    &quot;Gradle.websocket:backend [:backend:com.example.socket.MallApplication.main()].executor&quot;: &quot;Run&quot;,\r\n    &quot;Gradle.websocket:backend [:backend:com.example.socket.WebsocketApplication.main()].executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/GIGABYTE/git/particulate/build.gradle&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,\r\n    &quot;애플리케이션.MallApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;애플리케이션.WebsocketApplication.executor&quot;: &quot;Run&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"WebsocketApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$PROJECT_DIR$/../../../../Program Files/Amazon Corretto/jdk17.0.13_11\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.socket.WebsocketApplication\" />\r\n      <module name=\"websocket.backend.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.socket.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <extension name=\"software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension\">\r\n        <option name=\"credential\" />\r\n        <option name=\"region\" />\r\n        <option name=\"useCurrentConnection\" value=\"false\" />\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"애플리케이션.WebsocketApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\r\n      <changelist id=\"78b84ceb-3ba6-443c-86bb-48e295beed89\" name=\"변경\" comment=\"feat: frontend 생성\" />\r\n      <created>1738737453917</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1738737453917</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <ignored-roots>\r\n      <path value=\"$PROJECT_DIR$\" />\r\n    </ignored-roots>\r\n    <MESSAGE value=\"fix: 테이블 조인시 즉시로딩 적용\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fix: 테이블 조인시 즉시로딩 적용\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7d20f9df2489b03963db214050e75b15350fab6d)
++++ b/.idea/workspace.xml	(date 1741685604056)
+@@ -4,8 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="feat: frontend 생성">
++    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="feat: jwt 적용">
++      <change beforePath="$PROJECT_DIR$/.idea/modules/backend/websocket.backend.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules/frontend/websocket.frontend.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules/websocket.iml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -25,7 +30,7 @@
+             <expand>
+               <path>
+                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+-                <item name="mall" type="f1a62948:ProjectNode" />
++                <item name="websocket" type="f1a62948:ProjectNode" />
+               </path>
+             </expand>
+             <select />
+@@ -69,7 +74,10 @@
+     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+     &quot;last_opened_file_path&quot;: &quot;C:/Users/GIGABYTE/git/particulate/build.gradle&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+     &quot;애플리케이션.MallApplication.executor&quot;: &quot;Run&quot;,
+     &quot;애플리케이션.WebsocketApplication.executor&quot;: &quot;Run&quot;
+   }

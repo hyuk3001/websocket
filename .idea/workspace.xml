@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="feat: frontend 생성">
+    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="feat: 채팅메시지 저장을 위한 MongoDB 연결">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/backend/websocket.backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/frontend/websocket.frontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/websocket.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +33,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="mall" type="f1a62948:ProjectNode" />
+                <item name="websocket" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -34,8 +42,16 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -69,7 +85,10 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/GIGABYTE/git/particulate/build.gradle&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;애플리케이션.MallApplication.executor&quot;: &quot;Run&quot;,
     &quot;애플리케이션.WebsocketApplication.executor&quot;: &quot;Run&quot;
   }
@@ -110,6 +129,15 @@
       <option name="presentableId" value="Default" />
       <updated>1738737453917</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat: 채팅메시지 저장을 위한 MongoDB 연결">
+      <option name="closed" value="true" />
+      <created>1741688135890</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741688135890</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +156,7 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="fix: 테이블 조인시 즉시로딩 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 테이블 조인시 즉시로딩 적용" />
+    <MESSAGE value="feat: 채팅메시지 저장을 위한 MongoDB 연결" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 채팅메시지 저장을 위한 MongoDB 연결" />
   </component>
 </project>
