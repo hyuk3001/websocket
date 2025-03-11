@@ -43,16 +43,13 @@ dependencies {
 	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
 	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
 
-	// IAMPORT REST 클라이언트
-	implementation 'com.github.iamport:iamport-rest-client-java:0.2.23'
-
 	// 로깅 관련 라이브러리
 	implementation 'ch.qos.logback:logback-classic:1.5.6'
 	implementation 'ch.qos.logback:logback-core:1.5.6'
 	implementation 'org.slf4j:slf4j-api:2.1.0-alpha1'
 
 	// 재시도 관련 라이브러리
-	implementation 'org.springframework.retry:spring-retry'
+	// implementation 'org.springframework.retry:spring-retry'
 
 	// Swagger 관련 라이브러리
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
@@ -60,6 +57,12 @@ dependencies {
 	// Spring Security 및 Thymeleaf Extras
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+	// MongoDB 연결 관련 라이브러리
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	implementation 'org.mongodb:mongodb-driver-sync:4.9.1'
+	implementation 'org.mongodb:mongodb-driver-core:4.9.1'
 
 	// 테스트 관련 라이브러리
 	implementation 'org.springframework.boot:spring-boot-starter-test'

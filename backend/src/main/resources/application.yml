@@ -12,8 +12,12 @@ spring:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    show-sql: true
     open-in-view: false
+
+  data:
+    mongodb:
+      url: mongodb://localhost:27017/websocket
+      database: websocket
 
 springdoc:
   swagger-ui:
