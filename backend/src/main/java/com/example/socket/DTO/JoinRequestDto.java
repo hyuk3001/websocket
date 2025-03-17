@@ -2,10 +2,14 @@ package com.example.socket.DTO;
 
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class AccountDTO {
+@Builder
+@AllArgsConstructor
+public class JoinRequestDto {
 
     @NotBlank
     private String email;
