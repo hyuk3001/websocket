@@ -26,9 +26,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
-    private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
     private final TokenProvider tokenProvider;
+    private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -44,16 +44,14 @@ public class SecurityConfig {
 
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(new JwtFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class)
 
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/signup").permitAll()
                         .requestMatchers("/api/authenticate").permitAll()
                         .requestMatchers("/api/user").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/api/user/*").hasAnyRole("ADMIN")
-                        .anyRequest().authenticated())
-
-                .addFilterBefore(new JwtFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class)
-        ;
+                        .anyRequest().authenticated());
 
         return http.build();
     }
