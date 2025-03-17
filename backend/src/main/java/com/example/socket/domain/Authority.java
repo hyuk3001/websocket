@@ -7,8 +7,8 @@ import lombok.*;
 
 @Getter
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_authority")
 public class Authority {
 
@@ -16,7 +16,7 @@ public class Authority {
     @JsonIgnore
     @Column(name = "authority_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long authorityId;
 
     @Column(name = "authority_name", length = 50)
     private String authorityName;

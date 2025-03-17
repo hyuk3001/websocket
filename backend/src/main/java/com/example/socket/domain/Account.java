@@ -40,8 +40,10 @@ public class Account {
     @Column(name = "account_phone", length = 20, unique = true)
     private String phone;
 
-    @Column(name = "account_role", length = 20)
-    private String role = "USER";
+    // 하나의 역할(Role)을 설정
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @CreationTimestamp
     @Column(name = "joined_at", updatable = false)
@@ -50,16 +52,16 @@ public class Account {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "account_authority",
-            joinColumns = {@JoinColumn(name = "account_id", referencedColumnName = "account_id")}, // 수정
-            inverseJoinColumns = {@JoinColumn(name = "authority_id", referencedColumnName = "authority_id")}
+            joinColumns = @JoinColumn(name = "account_id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id")
     )
     private Set<Authority> authorities=new HashSet<>();
 
     @Builder
-    public Account(String email, String password, String name, String phone, String role, Set<Authority> authorities, LocalDateTime joinedAt) {
+    public Account(String email, String name, String password, String phone, Role role, Set<Authority> authorities, LocalDateTime joinedAt) {
         this.email = email;
-        this.password = password;
         this.name = name;
+        this.password = password;
         this.phone = phone;
         this.role = role;
         this.authorities = authorities;
