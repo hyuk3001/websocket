@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="feat: 채팅메시지 저장을 위한 MongoDB 연결">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/backend/websocket.backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/frontend/websocket.frontend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/websocket.iml" beforeDir="false" />
+    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="REFACTOR: 인증 관련 로직 수정&#10;&#10;Role과 Authority에 대해서 각각 테이블을 생성.&#10;Role 테이블에 저장된 권한을 기준으로 회원가입시 회원의 권한이 자동으로 입력되도록 설정.&#10;RefreshToken 생성, 해당 Token을 통해 Access Token을 재발급하는 로직 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/AccountDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,23 +68,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.websocket 빌드.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.websocket:backend [:backend:com.example.socket.MallApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.websocket:backend [:backend:com.example.socket.WebsocketApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/GIGABYTE/git/particulate/build.gradle&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;애플리케이션.MallApplication.executor&quot;: &quot;Run&quot;,
-    &quot;애플리케이션.WebsocketApplication.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.websocket 빌드.executor": "Run",
+    "Gradle.websocket:backend [:backend:com.example.socket.MallApplication.main()].executor": "Run",
+    "Gradle.websocket:backend [:backend:com.example.socket.WebsocketApplication.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/GIGABYTE/git/particulate/build.gradle",
+    "project.structure.last.edited": "프로젝트",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "애플리케이션.MallApplication.executor": "Run",
+    "애플리케이션.WebsocketApplication.executor": "Run"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.socket.repository" />
+      <recent name="com.example.socket.domain" />
+      <recent name="com.example.socket.DTO" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="WebsocketApplication" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Amazon Corretto/jdk17.0.13_11" />
@@ -137,7 +136,79 @@
       <option name="project" value="LOCAL" />
       <updated>1741688135890</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: 권한에 대한 id를 지정">
+      <option name="closed" value="true" />
+      <created>1741693700984</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741693700984</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: 회원가입시 role을 설정하도록 수정&#10;&#10;role을 통해 authority를 가져오도록 수정예정">
+      <option name="closed" value="true" />
+      <created>1741693838694</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741693838694</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: 회원가입시 role을 설정하도록 수정&#10;&#10;role을 통해 authority를 가져오도록 수정예정">
+      <option name="closed" value="true" />
+      <created>1741693893256</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741693893256</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: 회원가입시 role을 설정하도록 수정&#10;&#10;role을 통해 authority를 가져오도록 수정예정">
+      <option name="closed" value="true" />
+      <created>1741693909564</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741693909564</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: 기타 설정파일 수정">
+      <option name="closed" value="true" />
+      <created>1741693962354</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741693962354</updated>
+    </task>
+    <task id="LOCAL-00007" summary="REFACTOR: Role 엔티티 추가 및 연관된 엔티티 수정">
+      <option name="closed" value="true" />
+      <created>1742205542978</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742205542978</updated>
+    </task>
+    <task id="LOCAL-00008" summary="REFACTOR: refresh token 사용을 위해 DTO, Domain 수정">
+      <option name="closed" value="true" />
+      <created>1742205679246</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742205679246</updated>
+    </task>
+    <task id="LOCAL-00009" summary="REFACTOR: JWT 인증 및 토큰 처리방식 수정">
+      <option name="closed" value="true" />
+      <created>1742205793230</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742205793230</updated>
+    </task>
+    <task id="LOCAL-00010" summary="REFACTOR: 인증 관련 로직 수정&#10;&#10;Role과 Authority에 대해서 각각 테이블을 생성.&#10;Role 테이블에 저장된 권한을 기준으로 회원가입시 회원의 권한이 자동으로 입력되도록 설정.&#10;RefreshToken 생성, 해당 Token을 통해 Access Token을 재발급하는 로직 추가">
+      <option name="closed" value="true" />
+      <created>1742206084108</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742206084108</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +228,13 @@
     </ignored-roots>
     <MESSAGE value="fix: 테이블 조인시 즉시로딩 적용" />
     <MESSAGE value="feat: 채팅메시지 저장을 위한 MongoDB 연결" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 채팅메시지 저장을 위한 MongoDB 연결" />
+    <MESSAGE value="feat: 권한에 대한 id를 지정" />
+    <MESSAGE value="feat: 회원가입시 role을 설정하도록 수정&#10;&#10;role을 통해 authority를 가져오도록 수정예정" />
+    <MESSAGE value="feat: 기타 설정파일 수정" />
+    <MESSAGE value="REFACTOR: Role 엔티티 추가 및 연관된 엔티티 수정" />
+    <MESSAGE value="REFACTOR: refresh token 사용을 위해 DTO, Domain 수정" />
+    <MESSAGE value="REFACTOR: JWT 인증 및 토큰 처리방식 수정" />
+    <MESSAGE value="REFACTOR: 인증 관련 로직 수정&#10;&#10;Role과 Authority에 대해서 각각 테이블을 생성.&#10;Role 테이블에 저장된 권한을 기준으로 회원가입시 회원의 권한이 자동으로 입력되도록 설정.&#10;RefreshToken 생성, 해당 Token을 통해 Access Token을 재발급하는 로직 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR: 인증 관련 로직 수정&#10;&#10;Role과 Authority에 대해서 각각 테이블을 생성.&#10;Role 테이블에 저장된 권한을 기준으로 회원가입시 회원의 권한이 자동으로 입력되도록 설정.&#10;RefreshToken 생성, 해당 Token을 통해 Access Token을 재발급하는 로직 추가" />
   </component>
 </project>
