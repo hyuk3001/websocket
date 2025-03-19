@@ -49,7 +49,7 @@ public class Account {
     @Column(name = "joined_at", updatable = false)
     private LocalDateTime joinedAt = LocalDateTime.now();
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(
             name = "account_authority",
             joinColumns = @JoinColumn(name = "account_id"),
@@ -64,7 +64,7 @@ public class Account {
         this.password = password;
         this.phone = phone;
         this.role = role;
-        this.authorities = authorities;
+        this.authorities = authorities != null ? Set.copyOf(authorities) : new HashSet<>();
         this.joinedAt = joinedAt;
     }
 
