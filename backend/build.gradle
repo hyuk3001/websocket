@@ -58,11 +58,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 
-	// MongoDB 연결 관련 라이브러리
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	// PostgreSQL JDBC 드라이버
+	implementation 'org.postgresql:postgresql:42.6.0'
 
-	implementation 'org.mongodb:mongodb-driver-sync:4.9.1'
-	implementation 'org.mongodb:mongodb-driver-core:4.9.1'
+	// Redis 연동
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.apache.commons:commons-pool2'
 
 	// 테스트 관련 라이브러리
 	implementation 'org.springframework.boot:spring-boot-starter-test'
@@ -70,9 +71,6 @@ dependencies {
 	testCompileOnly 'junit:junit:4.13'
 	testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	// MySQL 연결 관련 라이브러리
-	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	// Lombok (컴파일 시 코드 생성)
 	compileOnly 'org.projectlombok:lombok'
