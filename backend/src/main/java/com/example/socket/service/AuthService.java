@@ -2,11 +2,9 @@ package com.example.socket.service;
 
 import com.example.socket.DTO.*;
 import com.example.socket.domain.Account;
-import com.example.socket.domain.Authority;
 import com.example.socket.domain.RefreshToken;
 import com.example.socket.domain.Role;
 import com.example.socket.jwt.TokenProvider;
-import com.example.socket.repository.AuthorityRepository;
 import com.example.socket.repository.RefreshTokenRepository;
 import com.example.socket.repository.RoleRepository;
 import com.example.socket.repository.UserRepository;
@@ -19,9 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
 import java.util.logging.Logger;
 
 @Service
@@ -31,7 +27,6 @@ public class AuthService {
     private static final Logger logger = Logger.getLogger(AuthService.class.getName());
 
     private final UserRepository userRepository;
-    private final AuthorityRepository authorityRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
@@ -124,7 +119,7 @@ public class AuthService {
         }
 
         // 5. 새로운 토큰 생성
-        TokenDto tokenDto = null;
+        TokenDto tokenDto;
         if (tokenProvider.refreshTokenPeriodCheck(refreshToken.getValue())) {
             // 5-1. Refresh Token의 유효기간이 3일 미만일 경우 전체(Access / Refresh) 재발급
             tokenDto = tokenProvider.generateTokenDto(authentication);

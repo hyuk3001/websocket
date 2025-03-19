@@ -44,14 +44,14 @@ public class SecurityConfig {
 
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(new JwtFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class)
 
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/api/signup").permitAll()
-                        .requestMatchers("/api/authenticate").permitAll()
-                        .requestMatchers("/api/user").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/api/user/*").hasAnyRole("ADMIN")
-                        .anyRequest().authenticated());
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/user/**").hasAnyRole("user","seller",  "admin")
+                        .requestMatchers("/api/seller/**").hasAnyRole("seller", "admin")
+                        .requestMatchers("/api/admin/**").hasAnyRole("admin")
+                        .anyRequest().authenticated())
+                .addFilterBefore(new JwtFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

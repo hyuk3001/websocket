@@ -30,11 +30,17 @@ public class JwtFilter extends OncePerRequestFilter {
         // 1. Request Header 에서 토큰을 꺼냄
         String jwt = resolveToken(request);
 
-        // 2. validateToken 으로 토큰 유효성 검사
-        // 정상 토큰이면 해당 토큰으로 Authentication 을 가져와서 SecurityContext 에 저장
-        if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
-            Authentication authentication = tokenProvider.getAuthentication(jwt);
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+        // 2. 토큰이 없거나 비어있으면 validateToken 호출 생략
+        if (StringUtils.hasText(jwt)) {
+            if (tokenProvider.validateToken(jwt)) {
+                Authentication authentication = tokenProvider.getAuthentication(jwt);
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+                logger.info("JWT 인증 성공. SecurityContext에 Authentication 저장 완료.");
+            } else {
+                logger.info("유효하지 않은 JWT: {}", jwt);
+            }
+        } else {
+            logger.info("JWT가 없는 요청입니다. Filter를 통과시킵니다.");
         }
         filterChain.doFilter(request, response);
     }
@@ -42,10 +48,12 @@ public class JwtFilter extends OncePerRequestFilter {
     private String resolveToken(HttpServletRequest request) {
         String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
 
+        logger.info("Authorization 헤더: {}", bearerToken);
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7);
         }
 
+        logger.info("Authorization 헤더에 Bearer 토큰이 없습니다.");
         return null;
     }
 }

@@ -15,6 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.security.Key;
 import java.util.Arrays;
@@ -145,6 +146,12 @@ public class TokenProvider implements InitializingBean {
     }
 
     public boolean validateToken(String token) {
+
+        if (!StringUtils.hasText(token)) {
+            logger.info("검증할 토큰이 없습니다.");
+            return false; // 유효하지 않은 토큰으로 간주
+        }
+
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
             return true;
