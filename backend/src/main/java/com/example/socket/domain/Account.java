@@ -1,13 +1,10 @@
 package com.example.socket.domain;
 
 
-import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.*;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
@@ -49,22 +46,14 @@ public class Account {
     @Column(name = "joined_at", updatable = false)
     private LocalDateTime joinedAt = LocalDateTime.now();
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(
-            name = "account_authority",
-            joinColumns = @JoinColumn(name = "account_id"),
-            inverseJoinColumns = @JoinColumn(name = "authority_id")
-    )
-    private Set<Authority> authorities=new HashSet<>();
 
     @Builder
-    public Account(String email, String name, String password, String phone, Role role, Set<Authority> authorities, LocalDateTime joinedAt) {
+    public Account(String email, String name, String password, String phone, Role role,  LocalDateTime joinedAt) {
         this.email = email;
         this.name = name;
         this.password = password;
         this.phone = phone;
         this.role = role;
-        this.authorities = authorities != null ? Set.copyOf(authorities) : new HashSet<>();
         this.joinedAt = joinedAt;
     }
 
