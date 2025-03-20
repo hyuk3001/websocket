@@ -12,9 +12,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   redis:
-    host: localhost               # Redis가 실행 중인 호스트
+    host: localhost              # Redis가 실행 중인 호스트
     port: 6379                    # Redis 포트
-    password: 1234
     timeout: 60000                # 연결 제한 시간
 
 
