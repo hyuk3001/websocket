@@ -1,18 +1,18 @@
 package com.example.socket.service;
 
-import com.example.socket.domain.Account;
-import com.example.socket.jwt.TokenProvider;
-import com.example.socket.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import lombok.RequiredArgsConstructor;
+import com.example.socket.domain.Account;
+import com.example.socket.jwt.TokenProvider;
+import org.springframework.stereotype.Component;
+import com.example.socket.repository.UserRepository;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,10 +32,9 @@ public class CustomUserDetailsService implements UserDetailsService {
         // 로그 추가
         logger.debug("사용자 정보 조회: {}", userEntity);  // DB에서 가져온 userEntity 확인
 
-        List<GrantedAuthority> grantedAuthorities = userEntity.getAuthorities().stream()
-                .map(authority -> new SimpleGrantedAuthority(authority.getAuthorityName()))
-                .collect(Collectors.toList());
-
+        List<GrantedAuthority> grantedAuthorities = List.of(
+                new SimpleGrantedAuthority(userEntity.getRole().getRoleName()) // Role 기반 권한 설정
+        );
         return User.builder()
                 .username(userEntity.getEmail())
                 .password(userEntity.getPassword())

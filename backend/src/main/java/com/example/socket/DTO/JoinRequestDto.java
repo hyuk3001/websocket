@@ -1,10 +1,10 @@
 package com.example.socket.DTO;
 
+import lombok.Data;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 
 @Data
 @Builder

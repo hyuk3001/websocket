@@ -1,9 +1,7 @@
 package com.example.socket.domain;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.*;
+import jakarta.persistence.*;
 
 @Getter
 @Entity

@@ -1,9 +1,9 @@
 package com.example.socket.DTO;
 
-import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
 
 @Data
 @Builder

@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="Refactor: Jwt 로직 수정&#10;&#10;Jwt 토큰에 대하여 검증 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__3__11___7_16__________.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/25__3__11__오후_7_16,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
+    <list default="true" id="78b84ceb-3ba6-443c-86bb-48e295beed89" name="변경" comment="Refactor:">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/WebsocketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/WebsocketApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/JoinRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/JoinRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/LoginRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/LoginRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/TokenDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/TokenDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/TokenRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/TokenRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/DTO/UserResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/RefreshToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/domain/RefreshToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/JwtAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/JwtAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/jwt/TokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/repository/RefreshTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/repository/RefreshTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/socket/service/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +257,55 @@
       <option name="project" value="LOCAL" />
       <updated>1742368902489</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Refactor: 데이터베이스를 PostgreSQL과 Redis로 변경">
+      <option name="closed" value="true" />
+      <created>1742379428277</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742379428277</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ETC: 기타 시스템 파일">
+      <option name="closed" value="true" />
+      <created>1742379447089</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1742379447089</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Refactor: 권한 관련 설정 제거&#10;&#10;프로젝트 규모에 맞춰 수정">
+      <option name="closed" value="true" />
+      <created>1742470269193</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1742470269193</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Refactor: 권한 관련 설정 제거&#10;&#10;프로젝트 규모에 맞춰 수정">
+      <option name="closed" value="true" />
+      <created>1742470549107</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1742470549107</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Refactor: RefreshToken을 Redis에 저장하도록 수정">
+      <option name="closed" value="true" />
+      <created>1742470599944</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1742470599944</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactor: RefreshToken을 Redis에 저장하도록 수정">
+      <option name="closed" value="true" />
+      <created>1742470679330</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1742470679330</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +336,10 @@
     <MESSAGE value="Refactor: api 앤드포인트 변경" />
     <MESSAGE value="Refactor: jpa fetch type 변경&#10;&#10;같은 컬렉션 공유로 오류 발생, fetch type 변경하여 오류 해결" />
     <MESSAGE value="Refactor: Jwt 로직 수정&#10;&#10;Jwt 토큰에 대하여 검증 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Jwt 로직 수정&#10;&#10;Jwt 토큰에 대하여 검증 추가" />
+    <MESSAGE value="Refactor: 데이터베이스를 PostgreSQL과 Redis로 변경" />
+    <MESSAGE value="ETC: 기타 시스템 파일" />
+    <MESSAGE value="Refactor: RefreshToken을 Redis에 저장하도록 수정" />
+    <MESSAGE value="Refactor: 권한 관련 설정 제거&#10;&#10;프로젝트 규모에 맞춰 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: 권한 관련 설정 제거&#10;&#10;프로젝트 규모에 맞춰 수정" />
   </component>
 </project>

@@ -2,10 +2,10 @@ package com.example.socket.controller;
 
 
 import com.example.socket.DTO.*;
-import com.example.socket.service.AuthService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import com.example.socket.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +35,12 @@ public class AuthController {
     @PostMapping("/reissue")
     public ResponseEntity<TokenDto> reissue(@RequestBody TokenRequestDto tokenRequestDto) {
         return ResponseEntity.ok(authService.reissue(tokenRequestDto));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@RequestParam String email) {
+        authService.logout(email);
+        return ResponseEntity.ok("로그아웃 완료");
     }
 
 }

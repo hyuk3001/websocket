@@ -1,23 +1,23 @@
 package com.example.socket.config;
 
-import com.example.socket.jwt.JwtAccessDeniedHandler;
-import com.example.socket.jwt.JwtAuthenticationEntryPoint;
+import lombok.RequiredArgsConstructor;
 import com.example.socket.jwt.JwtFilter;
 import com.example.socket.jwt.TokenProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
+import com.example.socket.jwt.JwtAccessDeniedHandler;
+import org.springframework.web.cors.CorsConfiguration;
+import com.example.socket.jwt.JwtAuthenticationEntryPoint;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 
 import java.util.List;
 
@@ -47,8 +47,8 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/user/**").hasAnyRole("user","seller",  "admin")
-                        .requestMatchers("/api/seller/**").hasAnyRole("seller", "admin")
+                        .requestMatchers("/test-redis").permitAll()
+                        .requestMatchers("/api/user/**").hasAnyRole("user", "admin")
                         .requestMatchers("/api/admin/**").hasAnyRole("admin")
                         .anyRequest().authenticated())
                 .addFilterBefore(new JwtFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class);

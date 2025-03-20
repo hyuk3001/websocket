@@ -1,8 +1,8 @@
 package com.example.socket.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
 
 @Data
 @Builder

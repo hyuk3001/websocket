@@ -1,7 +1,7 @@
 package com.example.socket.DTO;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.AllArgsConstructor;
 
 @Data
 @AllArgsConstructor(staticName = "set")
